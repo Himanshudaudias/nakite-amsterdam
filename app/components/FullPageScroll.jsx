@@ -24,7 +24,7 @@ export function FullPageScroll() {
                                     </Zoom>
                                     <Fade bottom>
                                         <div className="bottombannertext">
-                                            <h2>creative concepts+ <span>brand consultancy</span></h2>
+                                            <h2>kishan creative concepts+ <span>brand consultancy</span></h2>
                                         </div>
                                     </Fade>
                                 </div>
