@@ -8,12 +8,6 @@ import blackimg from '../images/sava-text-testimonial-1.png'
 
 import firstblockimg from '../images/lastslide-two.png'
 import thirdblockimg from '../images/lastslidebottom.png'
-	const editableWelcome = useEditable('home_welcome', {
-			settings: {
-			title:'Defult title'
-			}
-	});
-
 
 export function FullPageScroll() {
     return (
@@ -30,17 +24,7 @@ export function FullPageScroll() {
                                     </Zoom>
                                     <Fade bottom>
                                         <div className="bottombannertext">
-                                        <Editable namespace="home_welcome" schema={{
-                                          name:'welcome',
-                                          settings:[
-						{
-                                          type:'text',
-                                          id:'title',
-					    label:'title'
-					    }
-                              	 ]}}>
-                                            <h2>{editableWelcome.settings.title}</h2>
-                                            </Editable>
+                                            <h2>creative concepts+ <span>brand consultancy</span></h2>
                                         </div>
                                     </Fade>
                                 </div>
