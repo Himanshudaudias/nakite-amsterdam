@@ -8,7 +8,7 @@ import blackimg from '../images/sava-text-testimonial-1.png'
 
 import firstblockimg from '../images/lastslide-two.png'
 import thirdblockimg from '../images/lastslidebottom.png'
-	const editableWelcome = useEdittable('home_welcome', {
+	const editableWelcome = useEditable('home_welcome', {
 			settings: {
 			title:'Defult title'
 			}
