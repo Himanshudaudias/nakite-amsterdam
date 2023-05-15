@@ -39,7 +39,7 @@ export function FullPageScroll() {
 					    label:'title'
 					    }
                               	 ]}}>
-                                            <h2>kk creative concepts+ <span>brand consultancy</span></h2>
+                                            <h2>{editableWelcome.settings.title}</h2>
                                             </Editable>
                                         </div>
                                     </Fade>
