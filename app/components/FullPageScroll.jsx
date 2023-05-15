@@ -9,6 +9,7 @@ import blackimg from '../images/sava-text-testimonial-1.png'
 import firstblockimg from '../images/lastslide-two.png'
 import thirdblockimg from '../images/lastslidebottom.png'
 
+export {Layout} from './Layout';
 export function FullPageScroll() {
     return (
         <div>
