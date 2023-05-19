@@ -2,12 +2,51 @@ import React from 'react';
 import Fullpage, { FullPageSections, FullpageSection } from "@ap.cx/react-fullpage";
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import spalcevideo from '../images/splash-video.mp4'
-import bannerimg from '../images/bannerimg.png'
-import blackimg from '../images/sava-text-testimonial-1.png'
+import spalcevideo from '../images/splash-video.mp4';
+import bannerimg from '../images/bannerimg.png';
+import blackimg from '../images/sava-text-testimonial-1.png';
 
-import firstblockimg from '../images/lastslide-two.png'
-import thirdblockimg from '../images/lastslidebottom.png'
+import firstblockimg from '../images/lastslide-two.png';
+import thirdblockimg from '../images/lastslidebottom.png';
+
+import {Suspense} from 'react';
+import {useLocalization, useShopQuery, CacheLong, gql} from '@shopify/hydrogen';
+import type {Menu, Shop} from '@shopify/hydrogen/storefront-api-types';
+
+import {Header} from '~/components';
+import {Footer} from '~/components/index.server';
+import {parseMenu} from '~/lib/utils';
+
+const HEADER_MENU_HANDLE = 'main-menu';
+const FOOTER_MENU_HANDLE = 'footer';
+
+const SHOP_NAME_FALLBACK = 'Hydrogen';
+
+/**
+ * A server component that defines a structure and organization of a page that can be used in different parts of the Hydrogen app
+ */
+export function Layout({children}: {children: React.ReactNode}) {
+  return (
+    <>
+      <div className="flex flex-col min-h-screen">
+        <div className="">
+          <a href="#mainContent" className="sr-only">
+            Skip to content
+          </a>
+        </div>
+        <Suspense fallback={<Header title={SHOP_NAME_FALLBACK} />}>
+          <HeaderWithMenu />
+        </Suspense>
+        <main role="main" id="mainContent" className="flex-grow">
+          {children}
+        </main>
+      </div>
+      <Suspense fallback={<Footer />}>
+        <FooterWithMenu />
+      </Suspense>
+    </>
+  );
+}
 
 
 export function FullPageScroll() {
