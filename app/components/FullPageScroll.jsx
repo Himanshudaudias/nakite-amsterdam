@@ -10,7 +10,7 @@ import firstblockimg from '../images/lastslide-two.png'
 import thirdblockimg from '../images/lastslidebottom.png'
 
 
-
+export {Hero} from './Hero';
 export function FullPageScroll() {
     return (
         <div>
